@@ -1,0 +1,64 @@
+body{
+    font-family: serif;
+    margin: 0;
+}
+
+#pierwszy,#drugi{
+background-color: darkcyan;
+color: white;
+width: 50%;
+height: 100px;
+letter-spacing: 15px;
+}
+#pierwszy{
+    float: left;
+}
+#drugi{
+    float: right;
+}
+
+footer{
+    background-color: darkcyan;
+    color: white;
+}
+#karta1, #karta2, #karta3{
+    background-color: azure;
+    width: 30%;
+    box-shadow: 4px 4px 8px dimgray;
+    margin: 1%;
+float: left;
+}
+.karty{
+    width: 100%;
+}
+
+p,h2,h3{
+    margin: 15px;
+}
+a{
+    color: white;
+}
+h5{
+    background-color: teal;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+h5:hover{
+    background-color: lightseagreen;
+}
+blockquote{
+
+font-style: italic;
+}
+#cytat{
+text-align: center;
+padding-top: 30px;
+padding-bottom: 30px;
+clear: both;
+
+}
+#joannacytat, #ewacytat{
+  display: none;
+}
