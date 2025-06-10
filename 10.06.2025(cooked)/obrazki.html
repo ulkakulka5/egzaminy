@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css">
+    <title>Efekty obrazu</title>
+</head>
+<body>
+    <header>
+<h2>Efekty na obrazach</h2>
+    </header>
+    
+    <section>
+        <img src="pszczola.jpg" id="pszczola" alt="pszczoła na fioletowym kwiatku"><br>
+        <input type="radio" name="pszczola" id="blur">
+        <label for="blur">Blur</label><br>
+        <input type="radio" name="pszczola" id="sepia">
+        <label for="sepia">Sepia</label><br>
+        <input type="radio" name="pszczola" id="negatyw">
+        <label for="negatyw">Negatyw</label><br>
+        <input type="button" onclick="obraz1funkcja()" value="Zastosuj">
+    </section>
+    <section>
+        <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="pomarancza"><br>
+        <input type="button" onclick="obraz2funkcja('kolorowy')" value="Kolorowy">
+        <input type="button" onclick="obraz2funkcja('czarnobialy')" value="Czarno-Biały">
+    </section>
+    <section>
+        <img src="owoce.jpg" alt="Kosz pełen owoców" id="owoce">
+        <input type="range" name="progres" max="100" min="0" value="100" id="progres"><br>
+        <input type="button" onclick="obraz3funkcja()" value="Zastosuj">
+    </section>
+    <section>
+         <img src="zolw.jpg" alt="Żółw w wodzie" id="zolw">
+          <input type="range" name="progres2" max="250" min="0" id="progres2"><br>
+          <input type="button" onclick="obraz4funkcja()" value="Zastosuj">
+    </section>
+
+    <footer>
+        <p><a href="http://www.css.com/" target="_blank">Zobacz inne efekty obrazu</a></p>
+        <p>Stronę wykonał: 07263001146</p>
+    </footer>
+    <script>
+        var obraz1calosc=document.getElementsByName("pszczola");
+       var obraz1='';
+       var zdjecie1=document.getElementById('pszczola');
+        var zdjecie2=document.getElementById('pomarancza');
+        var zdjecie3=document.getElementById('owoce');
+        var zdjecie4=document.getElementById('zolw');
+    
+       function obraz1funkcja(){
+        for (var i = 0; i < obraz1calosc.length; i++)
+       {
+        if(obraz1calosc[i].checked)
+       {
+        obraz1=obraz1calosc[i].id;
+       }
+       }
+       if(obraz1=='blur')
+       {
+        zdjecie1.style.filter = "blur(5px)";
+
+       }
+       else if(obraz1=='sepia')
+       {
+         zdjecie1.style.filter = "sepia(100%)";
+
+       }
+       else if(obraz1=='negatyw')
+       {
+        zdjecie1.style.filter = "invert(100%)";
+       }
+       }
+       
+       function obraz2funkcja(wersja){
+        if(wersja=='czarnobialy'){
+            zdjecie2.style.filter="grayscale(100%)";
+        }else if(wersja=='kolorowy'){
+             zdjecie2.style.filter="grayscale(0%)";
+        }
+       }
+
+       function obraz3funkcja(){
+            var obraz3=document.getElementById('progres').value + '%';
+        
+            zdjecie3.style.filter = "opacity("+obraz3+")";
+       }
+
+       function obraz4funkcja(){
+        var obraz4=document.getElementById('progres2').value + '%';
+            zdjecie4.style.filter = "brightness("+obraz4+")";
+       }
+    </script>
+</body>
+</html>
